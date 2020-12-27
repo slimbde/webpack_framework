@@ -41,12 +41,10 @@ module.exports = {
   },
   optimization: optimization(),
   devServer: {
-    clientLogLevel: "silent",
     port: 2500,
     contentBase: path.resolve(__dirname, "dist"),
     compress: true,
     //hot: isDev, - this should be disabled. Otherwise html page doesn't refresh
-    open: true,
   },
   plugins: [
     new HtmlWebpackPlugin({ template: "./index.html", minify: { collapseWhitespace: !isDev } }),
