@@ -29,15 +29,15 @@ const filename = ext => isDev ? `[name].${ext}` : `[name].[hash].${ext}`;
 module.exports = {
   context: path.resolve(__dirname, "src"),
   entry: {
-    main: ["@babel/polyfill", "./index.jsx"],
-    analytics: "./analytics.js"
+    main: ["@babel/polyfill", "./index.ts"],
+    analytics: "./analytics.ts"
   },
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: filename(`js`)
   },
   resolve: {
-    extensions: [".js", ".jsx", ".json"]
+    extensions: [".ts", ".tsx", ".js", ".json"]
   },
   optimization: optimization(),
   devServer: {
@@ -69,14 +69,14 @@ module.exports = {
         use: 'file-loader'
       },
       {
-        test: /\.(js|jsx)$/,
+        test: /\.tsx?$/,
         exclude: /node_modules/,
         loader: {
-          loader: "babel-loader",
-          options: {
-            presets: ["@babel/preset-env"],
-            plugins: ["@babel/plugin-proposal-class-properties"]
-          }
+          loader: "ts-loader",
+          //options: {
+          //  presets: ["@babel/preset-env"],
+          //  plugins: ["@babel/plugin-proposal-class-properties"]
+          //}
         }
       }
     ],

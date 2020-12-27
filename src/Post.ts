@@ -1,7 +1,10 @@
-import logo from './assets/logo.png';
+import * as logo from './assets/logo.png';
 
 export class Post {
-  constructor(title) {
+  private date: Date
+  private img: any
+
+  constructor(private title: string) {
     this.title = title;
     this.date = new Date();
     this.img = logo;

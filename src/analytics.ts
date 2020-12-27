@@ -1,3 +1,7 @@
+declare interface Window { analytics: any; }
+
+
+
 function createAnalytics() {
   let counter = 0;
   let isDestroyed = false;

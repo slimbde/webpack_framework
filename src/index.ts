@@ -1,7 +1,7 @@
 import { Post } from './Post';
 import './styles/styles.css';
-import json from './assets/json.json';
-import $ from 'jquery';
+import * as json from './assets/json.json';
+import * as $ from 'jquery';
 import './babel';
 
 
